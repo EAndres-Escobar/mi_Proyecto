@@ -1,0 +1,1320 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto+Slab&family=Ysabeau+Office&display=swap');
+
+/* cuerpo de la pagina */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 100vh;
+    background-image: radial-gradient(circle at 50% -20.71%, #a6ffa7 0, #90ffab 12.5%, 
+    #76ffb0 25%, #54ffb5 37.5%, #08ffbb 50%, #00fbc2 62.5%, #00f8ca 75%, #00f4d3 87.5%, #00f1dc 100%);
+    justify-content: center;
+}
+
+  /* titulo de la pagina */
+.title {
+    display: flex;
+    align-items: center;
+  }
+  
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+.heading {
+  font-family: cursive;
+  display: flex;
+  margin-left: 40px;
+  margin-top: 1.5rem;
+  text-shadow: 0 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+/* logos de la pagina */
+.logoFarmacia,
+.logoEdsoft {
+    width: 60px;
+    margin-top: 20px;
+}
+
+.logoFarmacia {
+margin-left: 1rem;
+}
+
+.logoEdsoft {
+    float: right;
+    margin-left: 66rem;
+}
+
+/* barra de navegacion del menu principal */
+
+.navbar {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    margin: auto;
+  }
+
+.navbar li {
+    display: inline-block;
+  }
+
+.navbar a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+ /* Estilos del submenú */
+.dropdown-caja .submenu-caja {
+    display: none;
+    position: absolute;
+    background-image: radial-gradient(circle at 50% -20.71%, #a6ffa7 0, #90ffab 12.5%, 
+  #76ffb0 25%, #54ffb5 37.5%, #08ffbb 50%, #00fbc2 62.5%, #00f8ca 75%, #00f4d3 87.5%, #00f1dc 100%);
+    padding: 20px;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+
+.submenu-caja a {
+    display: block;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+.submenu-caja a.caja-link {
+    color: #000000;
+    font-size: 1.2rem;
+  }
+
+  
+/* Mostrar el submenú al pasar el mouse */
+.dropdown-caja:hover .submenu-caja {
+    display: block;
+  }
+
+  /* Mostrar los elementos del submenú de forma vertical */
+.dropdown-caja:hover .submenu-caja li {
+    display: block;
+  }
+
+.navbar li a:hover {
+    color: #f14763;
+  }
+
+  /* estilos para el menu central que muestra imagenes y graficos */
+.Menu-Central {
+    position: fixed;
+    top: 61%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 5px; 
+  }
+
+  /* seccion interna del menu */
+.menu-section {
+    width: 48%;
+    height: 48%;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    
+  }
+  
+  /* porcentaje del tamaño de la imagen y graficos */
+.window-section-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+#random-image-element {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+#message-content {
+    text-align: center;
+    margin: 0;
+  }
+
+#pie-chart-canvas {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+
+  /* Estilos generales de la ventana emergente de todas las tablas */
+.modal-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    background-color: skyblue;
+    padding: 20px;
+    z-index: 9999;
+    cursor: move;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    resize: both;
+    overflow: auto;
+  }
+  
+.modal-content {
+    display: none;
+  }
+  
+  /* Estilo para mostrar la ventana emergente */
+.modal-window.show {
+    display: block;
+  }
+  
+.modal-window.show .modal-content {
+    display: block;
+  }
+  
+  /* botones de la ventana emergente de todas las tablas */
+.close-button {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+.close-button:hover {
+    background-color: #b51832;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+/* parte interna de las ventanas nodal */
+#modal-content-inventario,
+#modal-content-compras,
+#modal-content-proveedores,
+#modal-content-clientes,
+#modal-content-Usuario,
+#modal-content-registrarProveedores,
+#modal-content-empleados,
+#modal-content-cierreCaja {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 97%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+/* titulos de las ventanas nodal */
+#modal-content-inventario .title-inventory,
+#modal-content-compras .title-compra,
+#modal-content-proveedores .title-suppliers,
+#modal-content-clientes .title-customers, 
+#modal-content-facturar .title-sales,
+#modal-content-facturar .subtitle-factura,
+#modal-content-Usuario .title-Usuario, 
+#modal-content-crearCliente .title-createCustomer,
+#modal-content-registrarMensajero .title-registerMessenger,
+#modal-content-registrarProveedores .title-registrarProveedores, 
+#modal-content-empleados .title-empleados,
+#modal-content-cierreCaja .title-cierreCaja{
+  font-size: 30px;
+  text-align: center;
+  margin-top: -20px;
+  font-family: cursive;
+  margin-bottom: 20px;
+}
+
+/* tabla de empleados */
+.empleados-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.empleados-table th,
+.empleados-table td {
+  border: solid 1px #000000;
+  text-align: center;
+  padding: 5px;
+ 
+}
+
+.empleados-table thead th {
+  background-color: #4CAF50;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-color: #000000;
+}
+
+.empleados-table tbody td {
+  padding: 18px;
+}
+
+.empleados-table tbody tr:nth-child(even) {
+  background-color: skyblue;
+}
+
+.empleados-table tbody tr:hover {
+  background-color: #cfcccc;
+  cursor: pointer;
+}
+
+.table-container-empleados {
+  overflow-y: auto;
+  height: 170px;
+}
+/* aquí termina la tabla */
+
+/* botones de la ventana emergente de empleados */
+  #search-code-empleados,
+  #search-name-empleados {
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#search-name-empleados {
+  width: 487px;
+}
+
+#search-button-empleados,
+#erase-button-empleados {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+ 
+#search-button-empleados:hover,
+#erase-button-empleados:hover {
+  background-color: #388E3C; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+/* tabla del inventario */
+.inventory-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.inventory-table th,
+.inventory-table td {
+  border: solid 1px #000000;
+  text-align: center;
+  padding: 5px;
+ 
+}
+
+.inventory-table thead th {
+  background-color: #4CAF50;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-color: #000000;
+}
+
+.inventory-table tbody td {
+  padding: 18px;
+}
+
+.inventory-table tbody tr:nth-child(even) {
+  background-color: skyblue;
+}
+
+.inventory-table tbody tr:hover {
+  background-color: #cfcccc;
+  cursor: pointer;
+}
+
+.table-container-inventory {
+  overflow-y: auto;
+  height: 170px;
+}
+/* aquí termina la tabla */
+
+/* botones de la ventana emergente de inventario */
+  #search-code-inventory,
+  #search-name-inventory {
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#search-name-inventory {
+  width: 487px;
+}
+
+#search-button-inventory,
+#erase-button-inventory {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+ 
+#search-button-inventory:hover,
+#erase-button-inventory:hover {
+  background-color: #388E3C; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+  
+/* tabla de los Proveedores */
+.suppliers-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.suppliers-table th,
+.suppliers-table td {
+  border: solid 1px #000000;
+  text-align: center;
+  padding: 5px;
+  width: 5%;
+}
+
+.suppliers-table thead th {
+  background-color: #4CAF50;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-color: #000000;
+}
+
+.suppliers-table tbody td {
+  padding: 18px;
+}
+
+.suppliers-table tbody tr:nth-child(even) {
+  background-color: skyblue;
+}
+
+.suppliers-table tbody tr:hover {
+  background-color: #cfcccc;
+  cursor: pointer;
+}
+
+.table-container-suppliers {
+  overflow-y: auto;
+  height: 170px;
+}
+/* aquí termina la tabla */
+
+/* botones de la ventana emergente de proveedores */
+  #search-code-suppliers,
+  #search-name-suppliers {
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#search-name-suppliers {
+  margin-left: 20px;
+  width: 467px;
+}
+
+#search-button-suppliers,
+#erase-button-suppliers {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+ 
+#search-button-suppliers:hover,
+#erase-button-suppliers:hover {
+  background-color: #388E3C; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* tabla de los Clientes */
+.customers-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.customers-table th,
+.customers-table td {
+  border: solid 1px #000000;
+  text-align: center;
+  padding: 5px;
+  width: 5%;
+}
+
+.customers-table thead th {
+  background-color: #4CAF50;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-color: #000000;
+}
+
+.customers-table tbody td {
+  padding: 18px;
+}
+
+.customers-table tbody tr:nth-child(even) {
+  background-color: skyblue;
+}
+
+.customers-table tbody tr:hover {
+  background-color: #cfcccc;
+  cursor: pointer;
+}
+
+.table-container-customers {
+  overflow-y: auto;
+  height: 170px;
+}
+/* aquí termina la tabla */
+
+/* botones de la ventana emergente de Clientes */
+  #search-code-customers,
+  #search-name-customers {
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#search-name-customers {
+  margin-left: 20px;
+  width: 467px;
+}
+
+#search-button-customers,
+#erase-button-customers {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+ 
+#search-button-customers:hover,
+#erase-button-customers:hover {
+  background-color: #388E3C; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* Estilos para la sección lateral */
+.lateral {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin-top: 5%;
+}
+
+.lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lateral li {
+  margin-bottom: 40px;
+}
+
+.lateral li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  margin-left: 50%;
+  text-decoration: none;
+}
+
+.lateral li a:hover img {
+  transform: scale(1.1);
+}
+
+.lateral li a span {
+  margin-top: 1px;
+  font-weight: bold;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.lateral li a:hover span {
+  color: red;
+}
+
+.lateral li a img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.lateral li a:focus img {
+  outline: none;
+}
+
+/* Estilos para el submenu para venta */
+.sales-menu .sales-submenu {
+  display: none;
+  position: absolute;
+  background-image: radial-gradient(circle at 50% -20.71%, #a6ffa7 0, #90ffab 12.5%, 
+  #76ffb0 25%, #54ffb5 37.5%, #08ffbb 50%, #00fbc2 62.5%, #00f8ca 75%, #00f4d3 87.5%, #00f1dc 100%);
+  padding-left: 0px;
+  padding-right: 80px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  border-radius: 10px;
+  box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.sales-submenu a {
+  display: block;
+  margin: -20px 0;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.sales-menu:hover .sales-submenu {
+  display: block;
+}
+
+.sales-submenu {
+  display: inline-block;
+}
+
+.sales-submenu li a:hover {
+  color: #f14763;
+}
+
+/* Estilo para mostrar la ventana emergente de cierre diario*/
+/* titulo de vista previa */
+#modal-content-cierreCaja .title-vistaPrevia{
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  font-family: cursive;
+  margin-bottom: 20px;
+}
+
+
+#modal-content-cierreCaja .input-group-cierreCaja {
+  margin-bottom: 20px;
+  display: inline;
+  align-items: center;
+
+}
+
+#modal-content-cierreCaja .input-group-cierreCaja label {
+  width: 140px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+}
+
+#modal-content-cierreCaja .input-group-cierreCaja input[type="text"],
+#modal-content-cierreCaja .input-group-cierreCaja input[type="number"] {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  justify-self: stretch;
+  width: 10rem;
+}
+
+#modal-content-cierreCaja .input-group-cierreCaja input[type="text"] {
+  width: 30rem;
+}
+
+/* estilo de la ventana interna del modal */
+#modal-content-cierreCaja {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+/* botones de cierre caja */
+#modal-content-cierreCaja .button-group-cierreCaja {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button-group-cierreCaja {
+  display: flex;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+.button-group-cierreCaja button {
+  padding: 3px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button-group-cierreCaja button:hover {
+  background-color: #204f22;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para mostrar la ventana emergente de factura*/
+#modal-content-facturar .input-group-facturar {
+  margin-bottom: 20px;
+  display: inline;
+  align-items: center;
+
+}
+
+#modal-content-facturar .input-group-facturar label {
+  width: 140px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+}
+
+#modal-content-facturar .input-group-facturar label[for="Cantidad-Producto"] {
+  margin-right: -4rem; /* Ajusta el margen derecho */
+  margin-left: 2.8rem;
+}
+
+#modal-content-facturar .input-group-facturar label[for="Total-Venta"] {
+  margin-right: -5.5rem; 
+  margin-left: 6rem;
+}
+
+#modal-content-facturar .input-group-facturar label[for="Total-general"] {
+  margin-left: 2.6rem;
+}
+
+
+#modal-content-facturar .total-general {
+  margin-top: -1.5rem; 
+}
+
+
+#modal-content-facturar .input-group-facturar input[type="text"],
+#modal-content-facturar .input-group-facturar input[type="number"],
+#modal-content-facturar .input-group-facturar input[type="date"] {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  justify-self: stretch;
+  width: 10rem;
+}
+
+#modal-content-facturar .input-group-facturar input[type="text"] {
+  width: 30rem;
+}
+
+#modal-content-facturar .subtitle-factura{
+  margin-top:1.5px;
+  margin-bottom: -3px;
+}
+
+#modal-content-facturar .input-group-facturar input#Cantidad-Producto {
+  width: 4rem;
+  margin-right: -1rem;
+}
+#modal-content-facturar .input-group-facturar input#Total-Venta {
+  width: 7rem;
+}
+
+#modal-content-facturar .input-group-facturar input#Total-general {
+  width: 7rem;
+  margin-left: -5rem;
+}
+
+/* estilo de la ventana interna del modal */
+#modal-content-facturar {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 60%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+/* botones de la ventana */
+#modal-content-facturar .button-group-facturarVenta {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button-group-facturarVenta {
+  display: flex;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+.button-group-facturarVenta button {
+  margin: 0 5px;
+  padding: 3px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button-group-facturarVenta button:hover {
+  background-color: #204f22;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* tabla de la facturar venta */
+.scrollable-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.scrollable-table th,
+.scrollable-table td {
+  border: solid 1px #000000;
+  text-align: center;
+  padding: 5px;
+  width: 5%;
+}
+
+.scrollable-table thead th {
+  background-color: #4CAF50;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-color: #000000;
+}
+
+.scrollable-table tbody td {
+  padding: 6px;
+}
+
+.scrollable-table tbody tr:nth-child(even) {
+  background-color: skyblue;
+}
+
+.scrollable-table tbody tr:hover {
+  background-color: #cfcccc;
+  cursor: pointer;
+}
+
+.scrollable-table tbody tr {
+  background-color: #ffffff;
+}
+
+
+.table-container-scrollable {
+  overflow-y: auto;
+  height: 147px;
+}
+/* aquí termina la tabla */
+
+/* Contenido de Usuario */
+#modal-content-Usuario .user-field label {
+  font-weight: bold;
+}
+
+/* Estilos de la fotografía */
+.photo-container {
+  text-align: center;
+  float: right;
+  margin-top: -200px;
+  font-weight: bold;
+  margin-right: 100px;
+  
+}
+
+.Fotografia-usuario {
+  width: 300px;
+  height: 350px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.Fotografia-usuario label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.Fotografia-usuario img {
+  max-width: 90%;
+  max-height: 85%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Estilos de nombre, apellidos, Cedula, correo y celular */
+#modal-content-Usuario .Nombre-usuario,
+#modal-content-Usuario .Apellidos-usuario,
+#modal-content-Usuario .Cedula-usuario,
+#modal-content-Usuario .Correo-usuario,
+#modal-content-Usuario .Celular-usuario {
+  margin-bottom: 45px;
+  margin-left: 30px
+}
+
+/* Estilos del cargo */
+#modal-content-Usuario .Cargo-usuario {
+  margin-top: auto;
+  margin-left: 30px;
+}
+
+/* ventana emergente de crear cliente */ 
+#modal-content-crearCliente {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#modal-content-crearCliente .input-group-createCustomer {
+  margin-bottom: 10px;
+  display: table;
+  align-items: center;
+
+}
+
+#modal-content-crearCliente .input-group-createCustomer label {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+#modal-content-crearCliente .input-group-createCustomer input[type="text"],
+#modal-content-crearCliente .input-group-createCustomer input[type="number"],
+#modal-content-crearCliente .input-group-createCustomer input[type="date"] {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  justify-self: stretch;
+  width: 51rem;
+  margin-bottom: 15px ;
+}
+
+/* ventana interna de la modal */
+#modal-content-crearCliente {
+  background-color: #f1f1f1; 
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 85%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.button-group-crearCliente {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button-group-crearCliente button {
+  padding: 3px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin: 0 5px;
+}
+
+.button-group-crearCliente button:hover {
+  background-color: #204f22;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ventana de registrar mensajero */
+#modal-content-registrarMensajero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#modal-content-registrarMensajero .input-group-registerMessenger {
+  margin-bottom: 10px;
+  display: table;
+  align-items: center;
+
+}
+
+#modal-content-registrarMensajero .input-group-registerMessenger label {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+#modal-content-registrarMensajero .input-group-registerMessenger input[type="text"],
+#modal-content-registrarMensajero .input-group-registerMessenger input[type="number"],
+#modal-content-registrarMensajero .input-group-registerMessenger input[type="date"] {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  justify-self: stretch;
+  width: 51rem;
+  margin-bottom: 15px ;
+}
+
+/* ventana interna de la modal */
+#modal-content-registrarMensajero {
+  background-color: #f1f1f1; 
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 85%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.button-group-registerMessenger {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button-group-registerMessenger button {
+  padding: 3px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin: 0 5px;
+}
+
+.button-group-registerMessenger button:hover {
+  background-color: #204f22;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ventana emergente de compras */
+
+#modal-content-compras #body-compra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#modal-content-compras .input-group-compra {
+  margin-bottom: 16px;
+  display: table;
+  align-items: center;
+
+}
+
+#modal-content-compras .input-group-compra label {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+#modal-content-compras .input-group-compra input[type="text"],
+#modal-content-compras .input-group-compra input[type="number"],
+#modal-content-compras .input-group-compra input[type="date"] {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  justify-self: stretch;
+  width: 51rem;
+}
+
+
+#modal-content-compras .button-group-compra {
+  text-align: center;
+  margin-top: -5px;
+}
+
+.button-group-compra {
+  display: flex;
+  justify-content: center;
+  margin-top: -29px;
+}
+
+.button-group-compra button {
+  padding: 3px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin: 0 5px;
+}
+
+.button-group-compra button:hover {
+  background-color: #204f22;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el contenedor */
+.logout-container {
+  position: relative;
+}
+
+/* Estilos para el botón de logout */
+.logout {
+  color: black;
+  position: absolute;
+  margin-top: 700px;
+  top: 0;
+  right: 20px;
+  text-decoration: none;
+}
+
+i{
+  color: red;
+}
+
+.success {
+  position: absolute;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 73%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #7ef882;
+  color: #000000;
+  padding: 10px;
+  border-radius: 15px;
+  opacity: 1;
+  animation: fadeOut 1s ease-in-out 2s forwards;
+}
+
+.error {
+  position: absolute;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 73%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f17e91;
+  color: #000000;
+  padding: 10px;
+  border-radius: 15px;
+  opacity: 1;
+  animation: fadeOut 1s ease-in-out 2s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1; /* Inicia completamente visible */
+  }
+  to {
+      opacity: 0; /* Termina completamente transparente */
+  }
+}
+
+/* registrar proveedores */
+
+#modal-content-registrarProveedores #body-RP{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#modal-content-registrarProveedores .input-group-registrarProveedores {
+  margin-bottom: 10px;
+  display: table;
+  align-items: center;
+
+}
+
+#modal-content-registrarProveedores .input-group-registrarProveedores label {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+#modal-content-registrarProveedores .input-group-registrarProveedores input[type="text"],
+#modal-content-registrarProveedores .input-group-registrarProveedores input[type="number"],
+#modal-content-registrarProveedores .input-group-registrarProveedores input[type="date"] {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  justify-self: stretch;
+  width: 51rem;
+  margin-bottom: 15px ;
+}
+
+/* ventana interna de la modal */
+#modal-content-registrarProveedores {
+  background-color: #f1f1f1; 
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 85%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.button-group-registraProveedores {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button-group-registraProveedores button {
+  padding: 3px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin: 0 5px;
+}
+
+.button-group-registraProveedores button:hover {
+  background-color: #204f22;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.preview-container {
+  margin-top: -15px;
+  display: none;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  padding: 15px;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.data {
+  color: #ff0000; /* Cambia esto al color que desees */
+}
